@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Sudoku Adventure</title>
+  <meta name="description" content="A dungeon-flavored Sudoku: hard boards, scarce reveals, sealed cells, and keys earned through trials." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>🗝</text></svg>" />
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <h1>Sudoku <span class="title-accent">Adventure</span></h1>
+      <button id="new-game-btn" type="button" class="btn btn-parchment">⚜ New Quest</button>
+    </header>
+
+    <section id="hud" class="hud" aria-label="Reveals and keys"></section>
+
+    <main class="layout">
+      <div class="board-wrap">
+        <div id="main-board"></div>
+      </div>
+
+      <aside class="controls">
+        <p id="message-log" class="message" aria-live="polite"></p>
+
+        <div id="number-pad" class="number-pad" aria-label="Number pad"></div>
+        <div class="pad-actions">
+          <button id="notes-btn" type="button" class="btn btn-parchment">✎ Notes</button>
+          <button id="erase-btn" type="button" class="btn btn-parchment">⌫ Erase</button>
+        </div>
+
+        <div class="action-buttons">
+          <button id="full-reveal-btn" type="button" class="btn btn-gold">🔮 Full Reveal</button>
+          <button id="constrained-reveal-btn" type="button" class="btn btn-gold">🎲 Fated Reveal</button>
+        </div>
+        <p class="hint-tip">Tap a 🔒 sealed cell to seek its key. Abandoning a trial never costs you anything.</p>
+      </aside>
+    </main>
+  </div>
+
+  <!-- generation overlay -->
+  <div id="gen-overlay" class="overlay hidden">
+    <div class="scroll-card">
+      <div class="gen-spinner">◈</div>
+      <h2>Charting a new dungeon…</h2>
+      <p class="progress"></p>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="dialog-root"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
